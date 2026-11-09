@@ -32,9 +32,10 @@ Foram cadastrados estudantes com atributos de identificação, curso, situação
 Foram utilizadas duas operações para recuperar os dados:
 
 - **Query:** consulta registros a partir da chave de partição, permitindo buscar estudantes por turma.
-- **Scan:** percorre os itens da tabela, permitindo recuperar registros sem especificar a chave de partição.
 
 ![Resultado Query](screenshots/3-query-results.png)
+
+- **Scan:** percorre os itens da tabela, permitindo recuperar registros sem especificar a chave de partição.
 
 ![Resultado Scan](screenshots/4-scan-results.png)
 
