@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laboratório prático de criação e gerenciamento de tabelas no Amazon DynamoDB.">
+  <title>Lab Extra 01 - Amazon DynamoDB | Bruno Carvalho</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <span class="eyebrow">ESCOLA DA NUVEM · AWS</span>
+      <h1>Amazon DynamoDB</h1>
+      <p class="subtitle">Lab Extra 01 - Criando e gerenciando uma tabela NoSQL</p>
+      <div class="tags">
+        <span>Banco de dados NoSQL</span>
+        <span>Nível básico</span>
+        <span>60 minutos</span>
+      </div>
+      <a class="button" href="https://github.com/brunogacarvalho/lab-extra-01-amazon-dynamodb/blob/main/README.md" target="_blank" rel="noopener noreferrer">Ver documentação no GitHub ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-heading">
+        <span class="eyebrow">01 · VISÃO GERAL</span>
+        <h2>O que foi praticado</h2>
+        <p>Criação de uma tabela no Amazon DynamoDB e gerenciamento de registros de estudantes.</p>
+      </div>
+
+      <div class="stats">
+        <article class="stat-card">
+          <span>Serviço</span>
+          <strong>Amazon DynamoDB</strong>
+        </article>
+        <article class="stat-card">
+          <span>Tabela</span>
+          <strong>MatriculasAWS</strong>
+        </article>
+        <article class="stat-card">
+          <span>Capacidade</span>
+          <strong>On-demand</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="eyebrow">02 · ESTRUTURA</span>
+        <h2>Chave primária composta</h2>
+        <p>A tabela utiliza dois atributos para identificar exclusivamente cada registro.</p>
+      </div>
+
+      <div class="key-layout">
+        <article class="key-card">
+          <span class="key-label">PARTITION KEY</span>
+          <h3>turma</h3>
+          <p>String</p>
+          <small>Identifica a turma do estudante.</small>
+        </article>
+        <div class="key-plus">+</div>
+        <article class="key-card">
+          <span class="key-label">SORT KEY</span>
+          <h3>aluno_id</h3>
+          <p>String</p>
+          <small>Identifica o estudante dentro da turma.</small>
+        </article>
+      </div>
+      <p class="note">A combinação de turma e aluno_id forma a chave primária composta.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="eyebrow">03 · CONSULTAS</span>
+        <h2>Query e Scan</h2>
+        <p>Duas maneiras de recuperar informações armazenadas na tabela.</p>
+      </div>
+
+      <div class="concept-grid">
+        <article class="concept-card">
+          <span class="concept-icon">⌕</span>
+          <h3>Query</h3>
+          <p>Consulta itens utilizando o valor da chave de partição. Neste laboratório, foi utilizada para buscar estudantes por turma.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">▤</span>
+          <h3>Scan</h3>
+          <p>Percorre os itens da tabela para recuperar registros, sem exigir um valor específico de chave de partição.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="eyebrow">04 · MANIPULAÇÃO DE DADOS</span>
+        <h2>Operações CRUD</h2>
+        <p>As quatro operações fundamentais praticadas durante o laboratório.</p>
+      </div>
+
+      <div class="crud-grid">
+        <article class="crud-card">
+          <strong>C</strong>
+          <h3>Create</h3>
+          <p>Inserir registros</p>
+        </article>
+        <article class="crud-card">
+          <strong>R</strong>
+          <h3>Read</h3>
+          <p>Consultar registros</p>
+        </article>
+        <article class="crud-card">
+          <strong>U</strong>
+          <h3>Update</h3>
+          <p>Atualizar atributos</p>
+        </article>
+        <article class="crud-card">
+          <strong>D</strong>
+          <h3>Delete</h3>
+          <p>Excluir registros</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section flashcards-section">
+      <div class="section-heading centered">
+        <span class="eyebrow">05 · REVISÃO</span>
+        <h2>Flashcards - Revise o que aprendeu</h2>
+        <p>Teste seus conhecimentos sobre o Amazon DynamoDB.</p>
+      </div>
+
+      <div class="flashcard-wrapper">
+        <div class="flashcard" id="flashcard">
+          <span class="card-counter" id="card-counter">1 / 8</span>
+          <div class="card-content">
+            <span class="card-label">PERGUNTA</span>
+            <h3 id="card-question">O que é o Amazon DynamoDB?</h3>
+            <p id="card-answer" class="answer hidden">É um serviço de banco de dados NoSQL totalmente gerenciado pela AWS.</p>
+          </div>
+          <button class="reveal-button" id="reveal-button">Mostrar resposta</button>
+        </div>
+
+        <div class="card-navigation">
+          <button class="nav-button" id="prev-button" disabled>← Anterior</button>
+          <button class="nav-button next-button" id="next-button">Próximo →</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bruno Carvalho · Laboratório complementar AWS</p>
+    <a href="https://github.com/brunogacarvalho/lab-extra-01-amazon-dynamodb" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  </footer>
+
+  <script>
+    const flashcards = [
+      {
+        question: "O que é o Amazon DynamoDB?",
+        answer: "É um serviço de banco de dados NoSQL totalmente gerenciado pela AWS."
+      },
+      {
+        question: "O que é uma Partition key?",
+        answer: "É o atributo utilizado para distribuir e localizar os dados dentro da tabela."
+      },
+      {
+        question: "Qual é a função da Sort key?",
+        answer: "É o atributo que complementa a chave primária e permite identificar e organizar itens dentro de uma partição."
+      },
+      {
+        question: "O que é uma chave primária composta?",
+        answer: "É uma chave formada pela combinação de uma Partition key e uma Sort key."
+      },
+      {
+        question: "Qual é a diferença entre Query e Scan?",
+        answer: "Query consulta itens a partir da chave de partição. Scan percorre os itens da tabela."
+      },
+      {
+        question: "O que significa o modo On-demand?",
+        answer: "É o modo de capacidade que ajusta automaticamente a leitura e a escrita conforme a demanda."
+      },
+      {
+        question: "O que significa CRUD?",
+        answer: "Create, Read, Update e Delete: criar, consultar, atualizar e excluir dados."
+      },
+      {
+        question: "Por que o aluno_id foi definido como String?",
+        answer: "Para preservar os zeros à esquerda dos identificadores, como 001."
+      }
+    ];
+
+    let currentCard = 0;
+
+    const questionElement = document.getElementById("card-question");
+    const answerElement = document.getElementById("card-answer");
+    const counterElement = document.getElementById("card-counter");
+    const revealButton = document.getElementById("reveal-button");
+    const prevButton = document.getElementById("prev-button");
+    const nextButton = document.getElementById("next-button");
+
+    function showCard() {
+      const card = flashcards[currentCard];
+      questionElement.textContent = card.question;
+      answerElement.textContent = card.answer;
+      answerElement.classList.add("hidden");
+      revealButton.textContent = "Mostrar resposta";
+      counterElement.textContent = `${currentCard + 1} / ${flashcards.length}`;
+      prevButton.disabled = currentCard === 0;
+      nextButton.disabled = currentCard === flashcards.length - 1;
+    }
+
+    revealButton.addEventListener("click", () => {
+      const hidden = answerElement.classList.toggle("hidden");
+      revealButton.textContent = hidden ? "Mostrar resposta" : "Ocultar resposta";
+    });
+
+    prevButton.addEventListener("click", () => {
+      if (currentCard > 0) {
+        currentCard--;
+        showCard();
+      }
+    });
+
+    nextButton.addEventListener("click", () => {
+      if (currentCard < flashcards.length - 1) {
+        currentCard++;
+        showCard();
+      }
+    });
+
+    showCard();
+  </script>
+</body>
+</html>
