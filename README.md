@@ -66,4 +66,10 @@ Também foi proposto um desafio complementar de inserção de um novo estudante 
 
 [**Acessar página do laboratório**](https://brunogacarvalho.github.io/lab-extra-01-amazon-dynamodb/)
 
-*Laboratório complementar - Escola da Nuvem | Computação em Nuvem AWS*
+---
+
+**Professor:** [Raphael Ohlsen](https://www.linkedin.com/in/raphael-ohlsen/)
+
+**Instituição:** [Escola da Nuvem](https://escoladanuvem.org/) | [LinkedIn](https://www.linkedin.com/school/escola-da-nuvem/)
+
+*Laboratório realizado como parte da formação em Computação em Nuvem AWS.*
